@@ -325,8 +325,15 @@ session_start();
                         <h3 class=" wow fadeInUp" data-offset="300" data-wow-delay=".5s" data-wow-duration="3s"><span>تواصل معنا</span></h3>
                     </div>
                 </div>
-                <p style="text-align:center;font-size:30px;"><a href="messagepage.php" id="msg" style="color: #1f97c7;
-    text-decoration: none;"> ا تريد ان ترسل رساله لنا ؟</a></p>
+                <p style="text-align:center;font-size:30px;"> <?php
+                                        if(isset($_SESSION['username'])): ?>
+                    <a href="contactus.php" id="msg" style="color: #1f97c7;
+                            text-decoration: none;"> ا تريد ان ترسل رساله لنا ؟</a></p><?php else: ?> <a href="contactus.html" id="msg" style="color: #1f97c7;
+                            text-decoration: none;"> ا تريد ان ترسل رساله لنا ؟</a></p>
+                <?php endif; ?>
+
+
+
             </div>
             <div class="row">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4670.945540677754!2d54.64221254489483!3d24.28952750470833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e372ddb92299f%3A0xb696a269da76c9d3!2z2YXYr9ix2LPYqSDYp9mE2KvYsdmI2KfYqg!5e0!3m2!1sen!2seg!4v1555441075048!5m2!1sen!2seg" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen class=" wow fadeInDown" data-offset="300" data-wow-delay=".5s" data-wow-duration="3s"></iframe>

@@ -28,7 +28,7 @@ if (isset($_POST['submit']))
 	    {
 	     
 
-	    	if($_POST['password'] == $user['password'])
+	    	if(md5($_POST['password']) == $user['password'])
 	    	{
                 session_start();
 	    		$_SESSION['username']=$user['name'];

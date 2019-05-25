@@ -5,7 +5,7 @@ if ( isset( $_POST['submit'] ) )
  	$servername = "localhost";
 	$username = "root";
 	$password = "";
-	$dbname = "";
+	$dbname = "school";
 
 	try {
 	    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -31,7 +31,7 @@ if ( isset( $_POST['submit'] ) )
 
 	    	 	  $stmt2 = $conn->prepare("UPDATE `students` SET `password` =:pass WHERE email =:mail");
 
-	    	 	  $newpass=($_POST['password']);
+	    	 	  $newpass=md5($_POST['password']);
 	    	 	  $stmt2->bindParam(':pass',$newpass);
 	    	 	   $stmt2->bindParam(':mail',$email);
 	    	 	   $stmt2->execute();
@@ -93,7 +93,7 @@ if ( isset( $_POST['submit'] ) )
 
     <div class="container">
         <h2>تغير كلمة السر</h2>
-        <form action="signin.php" method="post">
+        <form action="" method="post">
             <div class="form-group">
                 <label for="email">الايميل:</label>
                 <input type="email" class="form-control" id="email" placeholder="ادخل الايميل" name="email">
